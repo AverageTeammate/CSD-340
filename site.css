@@ -1,6 +1,6 @@
 /* Jacob Cannamela */
 /* CSD340 */
-/* Assignment 3 */
+/* Assignment  */
 /* 1.15.2025 */
 
 body {
@@ -8,8 +8,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #E0E0E0;
+    background-color: #2E2E2E;
 }
 
 #container {
@@ -17,21 +17,21 @@ body {
 }
 
 h1, h2, h3, h4 {
-    background-color: #FF0000;
-    color: #fff;
-    border: 1px solid #D6A800;
+    background-color: #444;
+    color: #FFF;
+    border: 1px solid #555;
     padding: 10px;
 }
 
 a {
-    color: #FF0000;
+    color: #1E90FF;
     text-decoration: none;
 }
 
 a:hover {
-    color: #CC0000;
+    color: #63B8FF;
 }
 
 a:visited {
-    color: #990000;
+    color: #104E8B;
 }
