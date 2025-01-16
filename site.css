@@ -12,21 +12,21 @@ body {
 }
 
 h1, h2, h3, h4 {
-    background-color: #4CAF50;
+    background-color: #FF0000;
     color: #fff;
     border: 1px solid #D6A800;
     padding: 10px;
 }
 
 a {
-    color: #4CAF50;
+    color: #FF0000;
     text-decoration: none;
 }
 
 a:hover {
-    color: #45a049;
+    color: #CC0000;
 }
 
 a:visited {
-    color: #3e8e41;
+    color: #990000;
 }
