@@ -1,0 +1,51 @@
+<!-- Jacob Cannamela -->
+<!-- CSD340 -->
+<!-- Assignment 9.3 -->
+<!-- 2.15.2025 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jacob Cannamela">
+    <meta name="description" content="Assignment 9.3: JavaScript - Part 1">
+    <meta name="keywords" content="HTML, CSS, Assignment, CSD 340">
+    <meta name="subject" content="Web Development">
+    <title>CSD 340 Development with HTML and CSS</title>
+    <link rel="stylesheet" href="Cannamela_Mod9_3.css">
+    <script>
+        var firstWord = "cybersecurity";
+        var secondWord = "learning";
+        var thirdWord = "technology";
+        var fourthWord = "family";
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Assignment 9.3: JavaScript - Part 1</h1>
+        <h2>Introduction to Jacob Cannamela</h2>
+
+        <p class="intro">I grew up in the small town of Waxhaw, North Carolina, just outside the bustling city of Charlotte. Although I loved the quiet charm of my hometown, I quickly grew to dislike the chaos and heavy traffic of the city whenever I visited. Those experiences made me appreciate the peaceful life in Waxhaw even more.</p>
+        
+        <p>At the age of 15, I got my first job at Dominos Pizza, which taught me the value of hard work and responsibility. Unfortunately, during this time, I broke my ankle skateboarding, which sidelined me from delivering pizzas. <span id="firstSpan">_________</span> was always an interest of mine, but I never thought it would become my career. A regular customer, who I often gave discounts to, took pity on my situation and suggested I try IT for his company in the city. That opportunity changed everything for me.</p>
+        
+        <p>In 2014, I did a one-day trial run at the customer’s company and was hired as a part-time intern the very next day. That role sparked my passion for <span id="secondSpan">_________</span> and opened doors I never imagined. Fast forward to today, and I now work in <span id="thirdSpan">_________</span> as a Threat Detection Engineer, with a decade of experience in the IT industry. It’s been an incredible journey of growth and <span id="fourthSpan">_________</span>.</p>
+        
+        <p>Outside of work, my hobbies revolve around spending quality time with my family and exploring the latest advancements in technology. Both give me a sense of purpose and excitement as I continue to pursue new challenges and opportunities.</p>
+
+        <button type="button" onclick="document.getElementById('firstSpan').innerHTML = firstWord">cybersecurity</button>
+        <button type="button" onclick="document.getElementById('secondSpan').innerHTML = secondWord">learning</button>
+        <button type="button" onclick="document.getElementById('thirdSpan').innerHTML = thirdWord">technology</button>
+        <button type="button" onclick="document.getElementById('fourthSpan').innerHTML = fourthWord">family</button>
+
+        <hr />
+
+        <address>
+            <p><a href="https://www.bellevue.edu" target="_blank">Bellevue University</a></p>
+            <p>1000 Galvin Road South</p>
+            <p>Bellevue, NE 68005</p>
+        </address>
+    </div>
+</body>
+</html>

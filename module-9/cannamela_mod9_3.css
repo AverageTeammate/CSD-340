@@ -1,0 +1,63 @@
+/* Jacob Cannamela */
+/* CSD340 */
+/* Assignment 2.2 */
+/* 1.9.2025 */
+
+/* setting proper html and body font size */
+html, body {
+    font-size: 16px;
+}
+
+/* setting the paragraph styling */
+p {
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+/* setting the styling for h1 */
+h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* setting the styling for h2 */
+h2 {
+    font-weight: 500;
+    text-align: left;
+    padding-top: 15px;
+}
+
+/* setting the styling for the address */
+address {
+    text-align: center;
+}
+
+/* setting the styling for the website link */
+address a {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #4F3674;
+    text-decoration: none;
+}
+
+/* setting the hover effect for the website link */
+address a:hover {
+    text-decoration: underline;
+    background-color: #D6A800;
+}
+
+/* setting the visited link styling */
+address a:visited {
+    color: #666;
+}
+
+/* setting the styling for the CSS sentence class */
+.sentence {
+    font-style: italic;
+}
+
+/* setting the styling for the intro class */
+.intro {
+    text-indent: 2em;
+}
