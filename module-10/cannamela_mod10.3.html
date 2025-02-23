@@ -1,0 +1,110 @@
+<!-- Jacob Cannamela -->
+<!-- CSD340 -->
+<!-- Assignment 10.3 -->
+<!-- 2.22.2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .rickImage {
+            width: 300px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin: 20px;
+        }
+
+        .rickImage:hover {
+            transform: scale(1.1);
+        }
+
+        .thumbnail {
+            width: 150px;
+            height: 100px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin: 20px;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        #loadingMessage {
+            display: none;
+            font-size: 24px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        #rickRoll {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function playRickRoll() {
+            var loadingMessage = document.getElementById("loadingMessage");
+            var rickRoll = document.getElementById("rickRoll");
+            var rickImage = document.getElementById("rickImage");
+
+            // Change Display to "Loading..."
+            loadingMessage.style.display = "block";
+
+            // Fake a loading screen, then show Rick Astley GIF
+            setTimeout(function() {
+                loadingMessage.style.display = "none";
+                rickRoll.style.display = "block";
+            }, 3000);
+        }
+
+        function showAlert() {
+            alert("Be careful what you click, I could have stolen your browser session tokens!");
+        }
+
+        function swapToGif() {
+            var rickImage = document.getElementById("rickImage");
+            rickImage.src = "images/rickroll.gif";
+        }
+
+        function swapToPng() {
+            var rickImage = document.getElementById("rickImage");
+            rickImage.src = "images/curtains.png";
+        }
+    </script>
+</head>
+<body>
+    <h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+    <!-- Rick Image that swaps on hover -->
+    <img id="rickImage" class="rickImage" src="images/curtains.png" 
+        alt="Hover over me!" 
+        onmouseover="swapToGif()" 
+        onmouseout="swapToPng()">
+
+    <!-- Loading Message -->
+    <div id="loadingMessage">Loading... Please wait.</div>
+
+    <!-- Rick Astley GIF (Fake Video) -->
+    <div id="rickRoll">
+        <img src="images/rickroll.gif" alt="Never Gonna Give You Up">
+        <p>Never Gonna Give You Up!</p>
+    </div>
+
+    <!-- Image to Trigger Alert -->
+    <img class="thumbnail" src="images/mrrobot.png" alt="Click me!" onclick="showAlert()">
+</body>
+</html>
