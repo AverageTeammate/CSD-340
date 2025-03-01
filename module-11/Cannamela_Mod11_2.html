@@ -1,0 +1,128 @@
+<!-- Jacob Cannamela -->
+<!-- CSD340 -->
+<!-- Assignment 11.2 -->
+<!-- 3.01.2025 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #inputBox {
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+        #addBtn { background-color: #28a745; }
+        #deleteBtn { background-color: #fa7474; color: white; }  /* Ensures 'X' is visible */
+        #displayBtn { background-color: #007bff; }
+        #undoBtn { background-color: #ff9800; }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 5px auto;
+            width: 300px;
+            border-radius: 5px;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+    <input type="text" id="inputBox" placeholder="Enter your list here if you dare!">
+    <button id="addBtn" onclick="addElement()">➕ Add</button>
+    <button id="deleteBtn" onclick="deleteLastElement()">❌ Delete Last Entry</button>
+    <button id="displayBtn" onclick="toggleDisplay()">📋 Display</button>
+    <button id="undoBtn" onclick="undoDelete()" disabled>↩️ Undo</button>
+    
+    <ul id="displayArea" class="hidden"></ul>
+
+    <script>
+        let elementsArray = [];
+        let deletedItems = [];
+
+        function addElement() {
+            const inputBox = document.getElementById('inputBox');
+            const newElement = inputBox.value.trim();
+
+            if (newElement) {
+                elementsArray.push(newElement);
+                alert(`Added: ${newElement} at position ${elementsArray.length}`);
+                inputBox.value = '';
+                deletedItems = []; // Reset deleted items on a new add
+                document.getElementById("undoBtn").disabled = true; // Disable undo when new item is added
+            } else {
+                alert('Please enter a value');
+            }
+        }
+
+        function deleteLastElement() {
+            if (elementsArray.length > 0) {
+                let removedElement = elementsArray.pop();
+                deletedItems.push(removedElement); // Store deleted item for undo
+                alert(`Deleted: ${removedElement}`);
+                document.getElementById("undoBtn").disabled = false; // Enable undo
+            } else {
+                alert('No elements to delete');
+            }
+        }
+
+        function undoDelete() {
+            if (deletedItems.length > 0) {
+                let restoredElement = deletedItems.pop();
+                elementsArray.push(restoredElement);
+                alert(`Restored: ${restoredElement}`);
+                if (deletedItems.length === 0) {
+                    document.getElementById("undoBtn").disabled = true; // Disable undo if no more items left
+                }
+            }
+        }
+
+        function toggleDisplay() {
+            const displayArea = document.getElementById('displayArea');
+            displayArea.classList.toggle("hidden"); // Show/hide display area
+            if (!displayArea.classList.contains("hidden")) {
+                displayElements();
+            }
+        }
+
+        function displayElements() {
+            const displayArea = document.getElementById('displayArea');
+            displayArea.innerHTML = '';
+
+            if (elementsArray.length === 0) {
+                displayArea.innerHTML = '<li>No items to display</li>';
+            } else {
+                elementsArray.forEach((element, index) => {
+                    let li = document.createElement('li');
+                    li.textContent = `${index + 1}. ${element}`;
+                    displayArea.appendChild(li);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
