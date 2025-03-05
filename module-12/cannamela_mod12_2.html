@@ -1,0 +1,65 @@
+<!-- Jacob Cannamela -->
+<!-- CSD340 -->
+<!-- Assignment 12.2 -->
+<!-- 3.5.2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" href="cannamela_mod12_2.css">
+    <script>
+        function reverseList(order) {
+            let bookList = document.getElementById("bookList");
+            let items = Array.from(bookList.children);
+            if (order === "asc") {
+                items.sort((a, b) => a.dataset.index - b.dataset.index);
+            } else {
+                items.sort((a, b) => b.dataset.index - a.dataset.index);
+            }
+            bookList.innerHTML = "";
+            items.forEach(item => bookList.appendChild(item));
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Assignment 12.2: JavaScript - Part 4</h1>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <div id="left">
+                <h3>Top 10 Favorite Books</h3>
+                <ol id="bookList">
+                    <li data-index="10">10. The Immortality Key</li>
+                    <li data-index="9">9. The Holy Blood and The Holy Grail</li>
+                    <li data-index="8">8. The Wisdom of Insecurity</li>
+                    <li data-index="7">7. Man’s Search for Meaning</li>
+                    <li data-index="6">6. The Four Agreements</li>
+                    <li data-index="5">5. The 48 Laws of Power</li>
+                    <li data-index="4">4. The Untethered Soul</li>
+                    <li data-index="3">3. The Power of Now</li>
+                    <li data-index="2">2. Harry Potter and the Half Blood Prince</li>
+                    <li data-index="1">1. Harry Potter and the Deathly Hallows</li>
+                </ol>
+                <button onclick="reverseList('asc')">Top to Bottom</button>
+                <button onclick="reverseList('desc')">Bottom to Top</button>
+            </div>
+            <div id="right">
+                <h3>5 Things I’ve Learned Since the Course Started</h3>
+                <ul>
+                    <li>Understanding HTML structure</li>
+                    <li>How to apply CSS styles</li>
+                    <li>Creating responsive layouts</li>
+                    <li>Using relative and absolute links</li>
+                    <li>Importance of semantic tags</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="bottom">
+            <a href="../index.html">Back to Landing Page</a>
+        </div>
+    </div>
+</body>
+</html>
